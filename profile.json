@@ -1,0 +1,8 @@
+{
+  "name": "Friend",
+  "level": 2,
+  "equipment": ["floor", "mat", "chair", "wall"],
+  "noise_sensitive": false,
+  "avoid_tags": [],
+  "banned_moves": []
+}

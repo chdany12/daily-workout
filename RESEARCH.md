@@ -21,7 +21,7 @@ Sources: [Darebee ADHD workouts collection](https://darebee.com/collections/adhd
 
 ## 2. How popular home workouts are actually built
 
-Almost every popular bodyweight workout (CrossFit WODs, Darebee, HIIT classes, YouTube follow-alongs) is **a format × a short list of moves**. The format is what makes it *feel* different. That's the key insight: we don't need to scrape thousands of workouts. Combining ~85 moves with 10 formats plus twists already gives far more variety than a scraped list would.
+Almost every popular bodyweight workout (CrossFit WODs, Darebee, HIIT classes, YouTube follow-alongs) is **a format × a short list of moves**. The format is what makes it *feel* different. That's the key insight: we don't need to scrape thousands of workouts. Combining 83 moves with 10 formats plus twists already gives far more variety than a scraped list would.
 
 Formats implemented (all common in the sources below):
 

@@ -30,7 +30,7 @@ Edit `profile.json`:
 ## How it stays fresh
 
 - **10 formats**: EMOM, AMRAP, Tabata, Ladder, Pyramid, Deck of Cards, Circuit, Death By, Chipper, Supersets. A format never repeats within 3 workouts.
-- **~85 moves**. Anything used in the last 5 workouts is 5× less likely to come back. Never-done moves get a 🆕 badge.
+- **83 moves**. Anything used in the last 5 workouts is 5× less likely to come back. Never-done moves get a 🆕 badge.
 - **A random twist** every session (Tempo mode, Commentator mode, Plank tax…) and a silly name.
 - Memory lives in `history.json`. Delete it to reset.
 

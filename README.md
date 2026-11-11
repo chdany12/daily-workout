@@ -34,7 +34,7 @@ Edit `profile.json`:
 - **A random twist** every session (Tempo mode, Commentator mode, Plank tax…) and a silly name.
 - Memory lives in `history.json`. Delete it to reset.
 
-Every sheet has: warm-up (3 min) → main event → cool-down (2 min), a ✅ tap column, and a short feedback box at the bottom.
+Every sheet has: warm-up (3 min) → main event → cool-down (2 min), a ✅ tap column, a ▶ Watch link per move (opens a YouTube demo), and a short feedback box at the bottom.
 
 ## MVP success test
 

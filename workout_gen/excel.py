@@ -1,12 +1,14 @@
 """Writes a Workout to a phone-friendly .xlsx: one tab, big text, tap-to-check column."""
 
+from urllib.parse import quote_plus
+
 from openpyxl import Workbook
 from openpyxl.styles import Alignment, Border, Font, PatternFill, Side
 from openpyxl.worksheet.datavalidation import DataValidation
 
 from .engine import Row, Workout
 
-COLS = {"A": 6, "B": 30, "C": 22, "D": 44}
+COLS = {"A": 6, "B": 30, "C": 22, "D": 44, "E": 11}
 WRAP_TOP = Alignment(wrap_text=True, vertical="top")
 CENTER = Alignment(horizontal="center", vertical="center")
 THIN = Side(style="thin", color="BBBBBB")
@@ -18,6 +20,7 @@ SECTION_FILL = {
     "COOL-DOWN": "A5D6A7",
 }
 GROUP_FILL = "EEEEEE"
+DEMO_URL = "https://www.youtube.com/results?search_query="
 NEW_FILL = "E1F5FE"
 
 
@@ -41,7 +44,7 @@ def write(w: Workout, path):
 
     def merged(text, font, fill=None, height=None):
         nonlocal r
-        ws.merge_cells(start_row=r, start_column=1, end_row=r, end_column=4)
+        ws.merge_cells(start_row=r, start_column=1, end_row=r, end_column=5)
         c = ws.cell(r, 1, text)
         c.font, c.alignment = font, WRAP_TOP
         if fill:
@@ -57,7 +60,7 @@ def write(w: Workout, path):
     merged("🎲 TWIST:  " + w.twist, Font(size=13, bold=True, color="6A1B9A"), fill="F3E5F5")
     r += 1
 
-    for c, h in zip("ABCD", ["✓", "Move", "Do", "How"]):
+    for c, h in zip("ABCDE", ["✓", "Move", "Do", "How", "Demo"]):
         cell = ws[f"{c}{r}"]
         cell.value = h
         cell.font = Font(size=13, bold=True, color="FFFFFF")
@@ -83,6 +86,14 @@ def write(w: Workout, path):
                 cell.font = Font(size=14, bold=(c == "B"))
                 if row.new and c == "B":
                     cell.fill = PatternFill("solid", fgColor=NEW_FILL)
+            if row.cue:  # real exercise rows (not deck draws / score lines) get a video link
+                name = row.move.split(" = ")[-1]
+                link = ws[f"E{r}"]
+                link.value = "▶ Watch"
+                link.hyperlink = DEMO_URL + quote_plus(f"{name} exercise how to")
+                link.font = Font(size=13, bold=True, color="1565C0", underline="single")
+                link.alignment = CENTER
+                link.border = BOX
             check.add(f"A{r}")
             ws.row_dimensions[r].height = _height(row.cue, move, width_chars=38)
             r += 1
@@ -98,7 +109,7 @@ def write(w: Workout, path):
               "Most boring part?", "Best part?"]:
         ws[f"B{r}"] = q
         ws[f"B{r}"].font = Font(size=13)
-        ws.merge_cells(start_row=r, start_column=3, end_row=r, end_column=4)
+        ws.merge_cells(start_row=r, start_column=3, end_row=r, end_column=5)
         ws[f"C{r}"].border = BOX
         ws.row_dimensions[r].height = 26
         r += 1

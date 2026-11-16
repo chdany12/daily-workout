@@ -4,7 +4,17 @@ import json
 from html import escape
 from urllib.parse import quote_plus, urlencode
 
+from functools import lru_cache
+
+from .anim import render
+from .anim_moves import M as MOVES
 from .engine import Row, Workout
+
+
+@lru_cache(maxsize=None)
+def figure(name: str) -> str:
+    """Looping stick-figure SVG for a move, or "" when the move has none."""
+    return render(MOVES[name], name) if name in MOVES else ""
 
 DEMO_URL = "https://www.youtube.com/results?search_query="
 FOCUS_LABEL = {"upper": "Upper body", "lower": "Lower body", "core": "Core", "full": "Full body"}
@@ -38,8 +48,15 @@ border-radius:12px;padding:12px;margin:6px 0;cursor:pointer}
 .move .body{flex:1;min-width:0}.move b{display:block}.do{font-weight:600;color:var(--accent)}
 .cue{color:var(--muted);font-size:.92rem}.new{font-size:.72rem;background:var(--new);border-radius:6px;
 padding:1px 6px;margin-left:6px;vertical-align:2px;font-weight:600}
-.watch{flex:none;align-self:center;font-size:.85rem;text-decoration:none;border:1px solid var(--line);
-border-radius:8px;padding:6px 9px;white-space:nowrap}
+.watch{display:inline-block;margin-top:4px;font-size:.85rem;text-decoration:none;white-space:nowrap}
+.fig{flex:none;align-self:center;width:104px;height:78px;border-radius:10px;background:var(--bg);cursor:zoom-in}
+.fig path,.fig circle{vector-effect:non-scaling-stroke}
+.fig path{fill:none;stroke-width:2.8px;stroke-linecap:round;stroke-linejoin:round}
+.fig .n{stroke:var(--ink)}.fig .f{stroke:var(--muted)}.fig .hd{fill:var(--bg);stroke:var(--ink);stroke-width:2.6px}
+.fig .fl{stroke:var(--line);stroke-width:2px}.fig .pr{stroke:var(--accent);opacity:.6;stroke-width:2px}
+.move.big .fig path{stroke-width:5px}.move.big .fig .hd{stroke-width:4.5px}.move.big .fig .fl,.move.big .fig .pr{stroke-width:3px}
+.fig .mat{fill:var(--line);opacity:.7}
+.move.big{flex-wrap:wrap}.move.big .fig{order:5;width:100%;height:auto;aspect-ratio:4/3;max-height:300px;cursor:zoom-out}
 .score{display:flex;gap:10px;align-items:center;padding:8px 12px;color:var(--muted)}
 .btn{display:inline-block;background:var(--accent);color:#fff;border:0;border-radius:12px;padding:12px 18px;
 font:inherit;font-weight:600;text-decoration:none;cursor:pointer}
@@ -71,6 +88,10 @@ document.getElementById('celebrate').style.display=(n&&n===boxes.length)?'block'
 boxes.forEach(b=>{b.checked=!!done[b.id];b.addEventListener('change',()=>{done[b.id]=b.checked;
 try{localStorage.setItem(KEY,JSON.stringify(done))}catch(e){}paint()})});
 document.querySelectorAll('.watch').forEach(a=>a.addEventListener('click',e=>e.stopPropagation()));
+const still=matchMedia('(prefers-reduced-motion: reduce)').matches;
+document.querySelectorAll('.fig').forEach(f=>{if(still&&f.pauseAnimations)f.pauseAnimations();
+f.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();
+const big=f.closest('.move').classList.toggle('big');if(still&&f.pauseAnimations)big?f.unpauseAnimations():f.pauseAnimations()})});
 paint();
 const form=document.getElementById('feedback');
 if(form){const cfg=JSON.parse(document.getElementById('fb-config').textContent);
@@ -113,12 +134,12 @@ def _rows(rows: list[Row], prefix: str) -> str:
             new = '<span class="new">NEW</span>' if r.new else ""
             name = r.move.split(" = ")[-1]
             watch = (f'<a class="watch" target="_blank" rel="noopener" '
-                     f'href="{DEMO_URL}{quote_plus(name + " exercise how to")}">▶ Watch</a>') if r.cue else ""
+                     f'href="{DEMO_URL}{quote_plus(name + " exercise how to")}">▶ Video</a>') if r.cue else ""
             cue = f'<div class="cue">{escape(r.cue)}</div>' if r.cue else ""
             out.append(
                 f'<label class="move"><input type="checkbox" id="{prefix}{i}">'
                 f'<span class="body"><b>{escape(r.move)}{new}</b>'
-                f'<span class="do">{escape(r.do)}</span>{cue}</span>{watch}</label>')
+                f'<span class="do">{escape(r.do)}</span>{cue}{watch}</span>{figure(name)}</label>')
     return "\n".join(out)
 
 

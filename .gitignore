@@ -1,4 +1,4 @@
-workouts/
-site/
-history.json
+/workouts/
+/site/
+/history.json
 __pycache__/

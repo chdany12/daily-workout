@@ -10,5 +10,22 @@
       "Single-leg RDL",
       "Squat to overhead reach"
     ]
+  },
+  {
+    "date": "2026-11-16T15:25",
+    "name": "The Rogue Frog Quest",
+    "focus": "lower",
+    "minutes": 25,
+    "format": "Tabata",
+    "exercises": [
+      "Curtsy lunge",
+      "Inchworm",
+      "Jump squat",
+      "Mountain climbers",
+      "No-jump burpee",
+      "Side plank hip dips",
+      "Speed skaters (step)",
+      "Squat pulses"
+    ]
   }
 ]

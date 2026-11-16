@@ -1,0 +1,165 @@
+{
+  "name": "The Rogue Frog Quest",
+  "focus": "lower",
+  "minutes": 25,
+  "level": 2,
+  "format_name": "Tabata",
+  "format_rules": "TABATA — 20 seconds all-out, 10 seconds rest, 8 rounds = 4 minutes. Alternate the two moves in each block. 4 block(s), 1 min rest between. Use any free interval timer app (search 'tabata timer').",
+  "twist": "CLOCK DIGIT: look at the clock. The last digit of the minute = bonus reps added to your FIRST move every round.",
+  "warmup": [
+    {
+      "move": "Down-dog pedal",
+      "do": "30 sec",
+      "cue": "In down-dog, alternate bending knees.",
+      "group": false,
+      "new": false
+    },
+    {
+      "move": "March in place",
+      "do": "45 sec",
+      "cue": "Easy march, swing your arms.",
+      "group": false,
+      "new": false
+    },
+    {
+      "move": "Wrist rolls",
+      "do": "20 sec",
+      "cue": "Interlace fingers, roll wrists in circles.",
+      "group": false,
+      "new": false
+    },
+    {
+      "move": "Shoulder rolls",
+      "do": "30 sec",
+      "cue": "Roll shoulders up, back and down.",
+      "group": false,
+      "new": false
+    }
+  ],
+  "main": [
+    {
+      "move": "Tabata 1 — 4 min",
+      "do": "",
+      "cue": "",
+      "group": true,
+      "new": false
+    },
+    {
+      "move": "Mountain climbers",
+      "do": "20 s on / 10 s off ×4",
+      "cue": "High plank, drive knees to chest fast.",
+      "group": false,
+      "new": true
+    },
+    {
+      "move": "Squat pulses",
+      "do": "20 s on / 10 s off ×4",
+      "cue": "Stay low in a squat, pulse up and down a few inches.",
+      "group": false,
+      "new": true
+    },
+    {
+      "move": "Tabata 2 — 4 min",
+      "do": "",
+      "cue": "",
+      "group": true,
+      "new": false
+    },
+    {
+      "move": "Speed skaters (step)",
+      "do": "20 s on / 10 s off ×4",
+      "cue": "Big side steps, swing arms like a speed skater.",
+      "group": false,
+      "new": true
+    },
+    {
+      "move": "No-jump burpee",
+      "do": "20 s on / 10 s off ×4",
+      "cue": "Step back to plank, step in, stand and reach. Quiet version.",
+      "group": false,
+      "new": true
+    },
+    {
+      "move": "Tabata 3 — 4 min",
+      "do": "",
+      "cue": "",
+      "group": true,
+      "new": false
+    },
+    {
+      "move": "Jump squat",
+      "do": "20 s on / 10 s off ×4",
+      "cue": "Squat then explode up. Land soft.",
+      "group": false,
+      "new": true
+    },
+    {
+      "move": "Side plank hip dips",
+      "do": "20 s on / 10 s off ×4",
+      "cue": "From side plank, dip hip toward floor and lift back up.",
+      "group": false,
+      "new": true
+    },
+    {
+      "move": "Tabata 4 — 4 min",
+      "do": "",
+      "cue": "",
+      "group": true,
+      "new": false
+    },
+    {
+      "move": "Curtsy lunge",
+      "do": "20 s on / 10 s off ×4",
+      "cue": "Step one leg diagonally behind the other, like a curtsy.",
+      "group": false,
+      "new": true
+    },
+    {
+      "move": "Inchworm",
+      "do": "20 s on / 10 s off ×4",
+      "cue": "Fold down, walk hands out to plank, walk back, stand.",
+      "group": false,
+      "new": true
+    }
+  ],
+  "cooldown": [
+    {
+      "move": "Figure-4 stretch",
+      "do": "30 sec / side",
+      "cue": "On your back, ankle on opposite knee, pull legs in.",
+      "group": false,
+      "new": false
+    },
+    {
+      "move": "Standing quad stretch",
+      "do": "20 sec / side",
+      "cue": "Hold the wall, pull heel to glute.",
+      "group": false,
+      "new": false
+    },
+    {
+      "move": "Kneeling hip flexor stretch",
+      "do": "30 sec / side",
+      "cue": "Half-kneel, tuck pelvis, lean forward slightly.",
+      "group": false,
+      "new": false
+    },
+    {
+      "move": "Wall chest stretch",
+      "do": "30 sec / side",
+      "cue": "Forearm on wall, turn your body away.",
+      "group": false,
+      "new": false
+    }
+  ],
+  "exercises": [
+    "Curtsy lunge",
+    "Inchworm",
+    "Jump squat",
+    "Mountain climbers",
+    "No-jump burpee",
+    "Side plank hip dips",
+    "Speed skaters (step)",
+    "Squat pulses"
+  ]
+}

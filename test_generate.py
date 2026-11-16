@@ -70,5 +70,25 @@ class TestGenerate(unittest.TestCase):
             self.assertTrue(ws.data_validations.dataValidation)
 
 
+class TestSite(unittest.TestCase):
+    def test_daily_build_roundtrip_and_rules(self):
+        import build_site
+        site = {"minutes": 25, "focus": "surprise", "github_repo": "x/y", "feedback_url": "", "feedback_extra": {}}
+        with tempfile.TemporaryDirectory() as tmp:
+            d, out = Path(tmp) / "data", Path(tmp) / "site"
+            for day in range(1, 11):
+                self.assertTrue(build_site.ensure_today(f"2026-01-{day:02d}", d, site, BASE))
+            self.assertFalse(build_site.ensure_today("2026-01-10", d, site, BASE))  # idempotent
+            self.assertEqual(build_site.render(d, out, site), 10)
+            h = engine.History(d / "history.json").entries
+            for a, b in zip(h, h[1:]):
+                self.assertNotEqual(a["focus"], b["focus"])
+            page = (out / "index.html").read_text()
+            self.assertIn(h[-1]["name"], page)
+            self.assertIn('id="feedback"', page)
+            self.assertTrue((out / "days" / "2026-01-01.xlsx").exists())
+            self.assertIn("2026-01-01", (out / "archive.html").read_text())
+
+
 if __name__ == "__main__":
     unittest.main()

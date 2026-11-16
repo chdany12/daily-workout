@@ -1,0 +1,97 @@
+{
+  "name": "The Feral Velociraptor Ritual",
+  "focus": "full",
+  "minutes": 25,
+  "level": 2,
+  "format_name": "Pyramid",
+  "format_rules": "PYRAMID — 7 rounds. Each round, do every move for that round's number (climb up, then back down). Rest ~30 s between rounds. Cap 20 min — stop wherever you are.",
+  "twist": "SILENT MODE: no music. Do the whole thing as quietly as possible like a ninja.",
+  "warmup": [
+    {
+      "move": "Bodyweight good morning",
+      "do": "10 reps",
+      "cue": "Gentle hinge to wake up the hamstrings.",
+      "group": false,
+      "new": false
+    },
+    {
+      "move": "Down-dog pedal",
+      "do": "30 sec",
+      "cue": "In down-dog, alternate bending knees.",
+      "group": false,
+      "new": false
+    },
+    {
+      "move": "Arm circles",
+      "do": "30 sec",
+      "cue": "Big circles forward, then back.",
+      "group": false,
+      "new": false
+    },
+    {
+      "move": "March in place",
+      "do": "45 sec",
+      "cue": "Easy march, swing your arms.",
+      "group": false,
+      "new": false
+    }
+  ],
+  "main": [
+    {
+      "move": "Squat to overhead reach",
+      "do": "3-6-9-12-9-6-3",
+      "cue": "Squat down, stand up fast and reach for the ceiling.",
+      "group": false,
+      "new": true
+    },
+    {
+      "move": "Single-leg RDL",
+      "do": "2-4-6-8-6-4-2 / side",
+      "cue": "Hinge on one leg, other leg reaches back, flat back.",
+      "group": false,
+      "new": true
+    },
+    {
+      "move": "Chair dip",
+      "do": "2-4-6-8-6-4-2",
+      "cue": "Hands on chair edge behind you, legs straight, elbows bend to 90°.",
+      "group": false,
+      "new": true
+    }
+  ],
+  "cooldown": [
+    {
+      "move": "Figure-4 stretch",
+      "do": "30 sec / side",
+      "cue": "On your back, ankle on opposite knee, pull legs in.",
+      "group": false,
+      "new": false
+    },
+    {
+      "move": "Child's pose",
+      "do": "45 sec",
+      "cue": "Knees wide, sit back, arms long.",
+      "group": false,
+      "new": false
+    },
+    {
+      "move": "Lying spinal twist",
+      "do": "30 sec / side",
+      "cue": "On your back, drop both knees to one side.",
+      "group": false,
+      "new": false
+    },
+    {
+      "move": "Standing quad stretch",
+      "do": "20 sec / side",
+      "cue": "Hold the wall, pull heel to glute.",
+      "group": false,
+      "new": false
+    }
+  ],
+  "exercises": [
+    "Chair dip",
+    "Single-leg RDL",
+    "Squat to overhead reach"
+  ]
+}

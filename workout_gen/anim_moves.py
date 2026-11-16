@@ -134,7 +134,7 @@ def fmirror(p):
             return None
         if isinstance(spec, tuple):
             return (-spec[0], -spec[1])
-        return ik(-spec.x, spec.y, -spec.bend) if not isinstance(spec.x, str) else spec
+        return ik(-spec.x, spec.y, -spec.bend, spec.flat) if not isinstance(spec.x, str) else spec
     q = dict(p)
     for a, b in (("a1", "a2"), ("l1", "l2")):
         q[a], q[b] = flip(p.get(b)), flip(p.get(a))
@@ -146,7 +146,9 @@ def fmirror(p):
     if "f2" in p: q["f1"] = -p["f2"]
     if "hip" in p: q["hip"] = (-p["hip"][0], p["hip"][1])
     if "x" in p: q["x"] = -p["x"]
-    if "t" in p: q["t"] = 360 - p["t"] if p["t"] > 0 else -p["t"]
+    for k in ("t", "h"):
+        if k in p:
+            q[k] = 360 - p[k] if p[k] > 0 else -p[k]
     return q
 
 
@@ -220,9 +222,10 @@ M["Reverse lunge"] = Move([_st, P(lunge(1), a1=(-20, 10), a2=(25, 40)), _st,
 _wide = dict(hip=(0, 33.5), t=180, **F_CLASP, l1=ik(24, 0), l2=ik(-24, 0))
 M["Lateral lunge"] = Move([_wide, P(_wide, hip=(12, 20), t=172), _wide, P(_wide, hip=(-12, 20), t=188)],
                           view="front", dur=3.6)
-_cst = dict(hip=(0, 38.5), t=180, **F_HIPS, l1=ik(5, 0), l2=ik(-5, 0))
-M["Curtsy lunge"] = Move([_cst, P(_cst, hip=(-2, 24), l1=ik(-18, 3), l2=ik(-6, 0)), _cst,
-                          P(_cst, hip=(2, 24), l1=ik(6, 0), l2=ik(18, 3))], view="front", dur=3.6)
+_cst = dict(hip=(0, 38.5), t=180, **F_CLASP, l1=ik(5, 0, flat=0.55), l2=ik(-5, 0, flat=0.55))
+# near (right) leg steps behind and across; the front knee bends toward the viewer
+_curtsy = P(_cst, hip=(-4, 20), t=184, h=182, l2=ik(-10, 0, flat=0.6), l1=ik(-20, 3, flat=0.55), f1=-40)
+M["Curtsy lunge"] = Move([_cst, _curtsy, _cst, fmirror(_curtsy)], view="front", dur=3.6)
 _su0 = dict(hip=(0, 38.5), t=180, a1=(-4, -2), a2=(5, 8), l1=ik(0, 0), l2=ik(-2, 0))
 _su1 = dict(_su0, hip=(2, 37), t=172, l1=ik(20, 21), f1=90)
 _su2 = dict(_su0, hip=(19, 58), t=178, l1=ik(20, 21), l2=ik(27, 34), f1=90, a1=(10, 20), a2=(-15, -5))
@@ -319,8 +322,13 @@ M["Squat thrust"] = Move([CROUCH, _pl], dur=1.6)
 _sjc = P(F_STAND, l1=(45, -15), l2=(-45, 15), a1=(15, 30), a2=(-15, -30))
 M["Star jump"] = Move([_sjc, P(F_STAND, up=14, a1=(140, 140), a2=(-140, -140), l1=(28, 28), l2=(-28, -28), f1=110, f2=-110)],
                       view="front", dur=1.4)
-_sk = dict(F_STAND, x=10, t=170, l1=(30, -15), l2=(55, 95), a1=(-40, -50), a2=(-100, -110))
-M["Speed skaters (step)"] = Move([_sk, fmirror(_sk)], view="front", dur=1.6)
+# land on the right leg (knee bending toward the viewer), left leg sweeps behind it,
+# arms swing across like a skater; then the mirror image
+_sk = dict(hip=(14, 27), t=166, h=172, l1=ik(16, 0, flat=0.35), l2=ik(38, 9, flat=0.9), f2=150,
+           a1=(115, 125), a2=(35, 50))
+_sk_mid = dict(hip=(0, 31), t=180, l1=ik(4, 2, flat=0.4), l2=ik(-4, 2, flat=0.4), a1=(25, 30), a2=(-25, -30))
+M["Speed skaters (step)"] = Move([_sk, _sk_mid, fmirror(_sk), _sk_mid], view="front", dur=2.4,
+                                 weights=[1, 1, 1, 1])
 M["Squat to overhead reach"] = Move([SQUAT, P(STAND, **ARMS_UP, f1=40, f2=40)], dur=2)
 _lt = P(lunge(1), a1=(60, 70), a2=(70, 80), t=176)
 M["Lunge with twist"] = Move([P(_st, a1=(40, 110), a2=(38, 108)), _lt, P(_st, a1=(40, 110), a2=(38, 108)),
@@ -328,10 +336,46 @@ M["Lunge with twist"] = Move([P(_st, a1=(40, 110), a2=(38, 108)), _lt, P(_st, a1
 M["Tuck jump"] = Move([P(SQUAT, t=150), P(STAND, t=165, up=16, l1=(140, 15), l2=(135, 12), a1=(80, 70), a2=(75, 65))], dur=1.2)
 _ff = P(STAND, t=160, l1=(45, -20), l2=(42, -22), a1=(30, 100), a2=(25, 95))
 M["Fast feet"] = Move([P(_ff, l1=(60, -10)), P(_ff, l2=(57, -12))], dur=0.4)
-_iw_st = dict(hip=(-40, 38.5), t=180, a1=(-4, -2), a2=(5, 8), l1=ik(-40, 0), l2=ik(-41, 0))
-_iw_fold = dict(hip=(-44, 36), t=40, h=25, curve=4, a1=ik(-18, 0), a2=ik(-19, 0), l1=ik(-40, 0), l2=ik(-41, 0))
-_iw_mid = dict(hip=(-36, 40), t=55, h=40, a1=ik(4, 0), a2=ik(3, 0), l1=ik(-40, 2), l2=ik(-41, 2), f1=40, f2=40)
-M["Inchworm"] = Move([_iw_st, _iw_fold, _iw_mid, plank(29, 24), _iw_mid, _iw_fold], dur=6.5)
+def _inchworm():
+    """Stand, fold, walk the hands out one at a time to a plank, walk them back, stand."""
+    stand = dict(hip=(-40, 38.5), t=180, a1=(-4, -2), a2=(5, 8), l1=ik(-40, 0), l2=ik(-41, 0))
+    fold_hip, fold_t, fold_x = (-44, 36), 40, -18
+    pl = plank(29, 24)
+    pl_hip, pl_t, pl_x = pl["hip"], pl["t"], 24
+
+    def body(u, h1, h2, lift=None):
+        hip = (fold_hip[0] + (pl_hip[0] - fold_hip[0]) * u,
+               fold_hip[1] + (pl_hip[1] - fold_hip[1]) * u + 9 * math.sin(math.pi * u))
+        ank = 4 * u
+        p = dict(hip=hip, t=fold_t + (pl_t - fold_t) * u, curve=4 * (1 - u),
+                 l1=ik(-40, ank), l2=ik(-41, ank), f1=90 - 75 * u, f2=90 - 75 * u,
+                 a1=ik(h1, 0), a2=ik(h2 - 1, 0))
+        p["h"] = p["t"] - 15 * (1 - u)
+        if lift:                                  # the moving hand, mid-step, off the floor
+            p[lift] = ik((h1 if lift == "a1" else h2) , 5)
+        return p
+
+    steps = 6
+    xs = [fold_x + (pl_x - fold_x) * i / steps for i in range(steps + 1)]
+    out_walk, h = [], [fold_x, fold_x]
+    for i in range(1, steps + 1):
+        mover = (i - 1) % 2                       # alternate hands
+        old = h[mover]
+        h[mover] = xs[i]
+        u_mid, u_end = (i - 0.5) / steps, i / steps
+        mid = list(h)
+        mid[mover] = (old + xs[i]) / 2
+        out_walk.append(body(u_mid, mid[0], mid[1], lift=("a1", "a2")[mover]))
+        out_walk.append(body(u_end, h[0], h[1]))
+    out_walk[-1] = P(out_walk[-1], hold=0.6)
+    back = [body(0.0, fold_x, fold_x)]
+    walk_back = out_walk[-2::-1]                  # same steps in reverse: lift, land, lift...
+    poses = [stand, body(0.0, fold_x, fold_x)] + out_walk + walk_back + back
+    weights = [2, 2] + [1] * (len(out_walk) + len(walk_back)) + [2]
+    return Move(poses, dur=10, weights=weights)
+
+
+M["Inchworm"] = _inchworm()
 
 # ---- warm-ups
 M["Arm circles"] = Move([P(STAND, a1=(0, 0), a2=(4, 4)), P(STAND, a1=(90, 90), a2=(94, 94)),
@@ -353,8 +397,12 @@ M["Bodyweight good morning"] = M["Good morning"]
 M["Shoulder rolls"] = Move([P(STAND, so=(2, 0)), P(STAND, so=(0, 5)), P(STAND, so=(-3.5, 2)), P(STAND, so=(0, -2))],
                            dur=2)
 M["Slow air squats"] = Move([STAND, SQUAT], dur=4)
-_wr = P(STAND, a1=(25, 95), a2=(22, 92))
-M["Wrist rolls"] = Move([_wr, P(_wr, a1=(30, 110), a2=(27, 107)), P(_wr, a1=(25, 80), a2=(22, 77))], dur=1.2)
+# close-up: forearms out in front, hands circling at the wrist
+_wr = P(STAND, t=180)
+M["Wrist rolls"] = Move(
+    [P(_wr, a1=(28, 90), a2=(26, 88), w1=150, w2=148), P(_wr, a1=(28, 97), a2=(26, 95), w1=90, w2=88),
+     P(_wr, a1=(28, 90), a2=(26, 88), w1=30, w2=28), P(_wr, a1=(28, 83), a2=(26, 81), w1=90, w2=88)],
+    dur=1.6, hands=True, focus=("hd", "n", "p", "e1", "w1", "hn1", "e2", "w2", "hn2"))
 M["Down-dog pedal"] = Move([P(DOG, l1=ik(-17, 9), f1=45), P(DOG, l2=ik(-18, 9), f2=45)], dur=1.6)
 
 # ---- cool-downs

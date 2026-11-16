@@ -18,6 +18,7 @@ A pose is a dict:
   hip      (x, y) pelvis position. Leave it out to stand the figure on the
            floor automatically (its lowest point touches y = up).
   x, up    with automatic standing: pelvis x, and height off the floor (jumps)
+  w1 w2    hand angles (only drawn for moves with hands=True)
   hold     seconds to pause on this pose
 ik targets are world points, or the name of a point already placed
 ("k1" knee, "a2" ankle, "e1" elbow, "n" neck...) plus an optional offset.
@@ -27,7 +28,7 @@ import math
 from dataclasses import dataclass, field
 from html import escape
 
-SEG = dict(torso=30, neck=9, head=6.5, ua=15, fa=14, th=20, sh=19, ft=5)
+SEG = dict(torso=30, neck=9, head=6.5, ua=15, fa=14, th=20, sh=19, ft=5, hand=5)
 SHOULDER_W, HIP_W = 7, 4          # half widths, used in front/top views
 
 
@@ -38,11 +39,13 @@ class IK:
     bend: int = 0                 # +1 / -1 picks which way the joint folds; 0 = limb default
     dx: float = 0.0
     dy: float = 0.0
+    flat: float = 1.0             # < 1 pulls the knee/elbow toward the straight line, as if it
+                                  # bent toward the viewer (front views: knees going forward)
 
 
-def ik(x, y=0.0, bend=0):
+def ik(x, y=0.0, bend=0, flat=1.0):
     """Pin a hand or foot to the world point (x, y)."""
-    return IK(x, y, bend)
+    return IK(x, y, bend, flat=flat)
 
 
 def ikp(name, dx=0.0, dy=0.0, bend=0):
@@ -57,6 +60,8 @@ class Move:
     dur: float = 2.0              # seconds for one full loop
     weights: list = None          # relative length of each transition
     props: list = field(default_factory=list)
+    hands: bool = False           # draw hands (angles w1 / w2, default: in line with the forearm)
+    focus: tuple = None           # frame only these points (a close-up), e.g. the upper body
 
 
 # ---------------------------------------------------------------- geometry
@@ -80,14 +85,30 @@ def _lerp_ang(a, b, u):
     return a + diff * u
 
 
-def _solve(root, target, l1, l2, bend):
+def _solve(root, target, l1, l2, bend, flat=1.0):
+    """Two-bone reach. Returns (upper, lower) angles, plus drawn lengths when flattened."""
     dx, dy = target[0] - root[0], target[1] - root[1]
     dist = max(abs(l1 - l2) + 1e-3, min(l1 + l2 - 1e-3, math.hypot(dx, dy)))
     base = _ang(dx, dy)
     cos_a = (l1 * l1 + dist * dist - l2 * l2) / (2 * l1 * dist)
     upper = base + bend * math.degrees(math.acos(max(-1.0, min(1.0, cos_a))))
     joint = _add(root, upper, l1)
-    return upper, _ang(target[0] - joint[0], target[1] - joint[1])
+    if flat >= 1:
+        return upper, _ang(target[0] - joint[0], target[1] - joint[1])
+    end = _add(root, base, dist)                  # the reachable point on the line to the target
+    ux, uy = _d(base)
+    along = (joint[0] - root[0]) * ux + (joint[1] - root[1]) * uy
+    on_line = (root[0] + ux * along, root[1] + uy * along)
+    j = (on_line[0] + (joint[0] - on_line[0]) * flat, on_line[1] + (joint[1] - on_line[1]) * flat)
+    return (_ang(j[0] - root[0], j[1] - root[1]), _ang(end[0] - j[0], end[1] - j[1]),
+            math.hypot(j[0] - root[0], j[1] - root[1]), math.hypot(end[0] - j[0], end[1] - j[1]))
+
+
+def _limb(spec, upper_len, lower_len):
+    """(upper, lower[, upper_len, lower_len]) -> angles and lengths."""
+    if len(spec) == 4:
+        return spec
+    return spec[0], spec[1], upper_len, lower_len
 
 
 def _skeleton(p, view, hip):
@@ -105,12 +126,13 @@ def _skeleton(p, view, hip):
         so = p.get("so", (0, 0))                 # shoulder shrug / roll offset
         sh = (sh[0] + so[0], sh[1] + so[1])
         pts[f"s{i}"], pts[f"h{i}"] = sh, hp
-        u, l = p[f"a{i}"]
-        pts[f"e{i}"] = _add(sh, u, SEG["ua"])
-        pts[f"w{i}"] = _add(pts[f"e{i}"], l, SEG["fa"])
-        u, l = p[f"l{i}"]
-        pts[f"k{i}"] = _add(hp, u, SEG["th"])
-        pts[f"a{i}"] = _add(pts[f"k{i}"], l, SEG["sh"])
+        u, l, lu, ll = _limb(p[f"a{i}"], SEG["ua"], SEG["fa"])
+        pts[f"e{i}"] = _add(sh, u, lu)
+        pts[f"w{i}"] = _add(pts[f"e{i}"], l, ll)
+        pts[f"hn{i}"] = _add(pts[f"w{i}"], p.get(f"w{i}", l), SEG["hand"])
+        u, l, lu, ll = _limb(p[f"l{i}"], SEG["th"], SEG["sh"])
+        pts[f"k{i}"] = _add(hp, u, lu)
+        pts[f"a{i}"] = _add(pts[f"k{i}"], l, ll)
         toe = l + 90 if (i == 1 or not wide) else l - 90   # front views: both feet turn out
         pts[f"t{i}"] = _add(pts[f"a{i}"], p.get(f"f{i}", toe), SEG["ft"])
     return pts
@@ -138,12 +160,13 @@ def _place(p, view, hip):
             root = pts[("h" if group == "l" else "s") + str(i)]
             if view != "side":                    # front views: joints fold outward, mirrored
                 bend_default = 1 if i == 1 else -1
-            q[f"{group}{i}"] = _solve(root, target, l1, l2, spec.bend or bend_default)
+            q[f"{group}{i}"] = _solve(root, target, l1, l2, spec.bend or bend_default, spec.flat)
     return q, _skeleton(q, view, hip)
 
 
 def _lowest(pts):
-    return min(min(y for k, (_, y) in pts.items() if k != "hd"), pts["hd"][1] - SEG["head"])
+    body = (y for k, (_, y) in pts.items() if k != "hd" and not k.startswith("hn"))
+    return min(min(body), pts["hd"][1] - SEG["head"])
 
 
 def _frame(p, view):
@@ -170,11 +193,20 @@ def _blend(a, b, u, view):
         sa, sb = a.get(k), b.get(k)
         if isinstance(sa, IK) and isinstance(sb, IK) and isinstance(sa.x, (int, float)) \
                 and isinstance(sb.x, (int, float)) and "hip" in a and "hip" in b:
-            out[k] = IK(sa.x + (sb.x - sa.x) * u, sa.y + (sb.y - sa.y) * u, sa.bend or sb.bend)
+            out[k] = IK(sa.x + (sb.x - sa.x) * u, sa.y + (sb.y - sa.y) * u, sa.bend or sb.bend,
+                        flat=sa.flat + (sb.flat - sa.flat) * u)
         elif isinstance(sa, IK) and isinstance(sb, IK) and sa.x == sb.x and isinstance(sa.x, str):
-            out[k] = IK(sa.x, 0.0, sa.bend or sb.bend, sa.dx + (sb.dx - sa.dx) * u, sa.dy + (sb.dy - sa.dy) * u)
+            out[k] = IK(sa.x, 0.0, sa.bend or sb.bend, sa.dx + (sb.dx - sa.dx) * u, sa.dy + (sb.dy - sa.dy) * u,
+                        flat=sa.flat + (sb.flat - sa.flat) * u)
         else:
-            out[k] = (_lerp_ang(qa[k][0], qb[k][0], u), _lerp_ang(qa[k][1], qb[k][1], u))
+            lens = (SEG["ua"], SEG["fa"]) if k[0] == "a" else (SEG["th"], SEG["sh"])
+            la, lb = _limb(qa[k], *lens), _limb(qb[k], *lens)
+            out[k] = (_lerp_ang(la[0], lb[0], u), _lerp_ang(la[1], lb[1], u),
+                      la[2] + (lb[2] - la[2]) * u, la[3] + (lb[3] - la[3]) * u)
+    for k in ("w1", "w2"):
+        arm = "a" + k[1]
+        if k in a or k in b:
+            out[k] = _lerp_ang(a.get(k, qa[arm][1]), b.get(k, qb[arm][1]), u)
     for k in ("f1", "f2"):
         turn = -90 if (k == "f2" and view != "side") else 90
         fa = a.get(k, qa[k.replace("f", "l")][1] + turn)
@@ -242,13 +274,15 @@ def _toward(a, b, length):
     return a[0] + dx / d * length, a[1] + dy / d * length
 
 
-def _paths(q, pts, view):
+def _paths(q, pts, view, hands=False):
+    h1 = f" {_pt(pts['hn1'])}" if hands else ""
+    h2 = f" {_pt(pts['hn2'])}" if hands else ""
     out = {
-        "arm2": f"M{_pt(pts['s2'])}L{_pt(pts['e2'])} {_pt(pts['w2'])}",
+        "arm2": f"M{_pt(pts['s2'])}L{_pt(pts['e2'])} {_pt(pts['w2'])}{h2}",
         "leg2": f"M{_pt(pts['h2'])}L{_pt(pts['k2'])} {_pt(pts['a2'])} {_pt(pts['t2'])}",
         "body": _spine(q, pts),
         "leg1": f"M{_pt(pts['h1'])}L{_pt(pts['k1'])} {_pt(pts['a1'])} {_pt(pts['t1'])}",
-        "arm1": f"M{_pt(pts['s1'])}L{_pt(pts['e1'])} {_pt(pts['w1'])}",
+        "arm1": f"M{_pt(pts['s1'])}L{_pt(pts['e1'])} {_pt(pts['w1'])}{h1}",
     }
     if view != "side":
         out["body"] += f"M{_pt(pts['s1'])}L{_pt(pts['s2'])}M{_pt(pts['h1'])}L{_pt(pts['h2'])}"
@@ -281,21 +315,26 @@ def render(m: Move, label="") -> str:
     times, frames = _frames(m)
     total = times[-1]
     key_times = ";".join(f"{t / total:.3f}".rstrip("0").rstrip(".") or "0" for t in times)
-    paths = [_paths(q, pts, m.view) for q, pts in frames]
+    paths = [_paths(q, pts, m.view, m.hands) for q, pts in frames]
     heads = [pts["hd"] for _, pts in frames]
 
     props_svg, prop_pts = _prop_shapes(m.props)
     xs, ys = [], []
     for _, pts in frames:
         for k, (x, y) in pts.items():
+            if k.startswith("hn") and not m.hands:
+                continue
+            if m.focus and k not in m.focus:
+                continue
             r = SEG["head"] if k == "hd" else 2
             xs += [x - r, x + r]; ys += [y - r, y + r]
-    for x, y in prop_pts:
-        xs.append(x); ys.append(y)
+    if not m.focus:
+        for x, y in prop_pts:
+            xs.append(x); ys.append(y)
     pad = 5
     x0, x1 = min(xs) - pad, max(xs) + pad
     y_top = max(ys) + pad
-    y_bot = 0 - 4 if m.view != "top" else min(ys) - pad
+    y_bot = min(ys) - pad if (m.view == "top" or m.focus) else -4
     w, h = x1 - x0, y_top - y_bot
     ratio = 4 / 3                                 # every figure gets the same box shape
     if w / h < ratio:

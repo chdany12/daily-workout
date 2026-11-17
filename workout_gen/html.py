@@ -133,13 +133,15 @@ def _rows(rows: list[Row], prefix: str) -> str:
         else:
             new = '<span class="new">NEW</span>' if r.new else ""
             name = r.move.split(" = ")[-1]
+            fig = figure(name)
+            # The animation shows the move in place; a video link is only a fallback for moves without one.
             watch = (f'<a class="watch" target="_blank" rel="noopener" '
-                     f'href="{DEMO_URL}{quote_plus(name + " exercise how to")}">▶ Video</a>') if r.cue else ""
+                     f'href="{DEMO_URL}{quote_plus(name + " exercise how to")}">▶ Video</a>') if r.cue and not fig else ""
             cue = f'<div class="cue">{escape(r.cue)}</div>' if r.cue else ""
             out.append(
                 f'<label class="move"><input type="checkbox" id="{prefix}{i}">'
                 f'<span class="body"><b>{escape(r.move)}{new}</b>'
-                f'<span class="do">{escape(r.do)}</span>{cue}{watch}</span>{figure(name)}</label>')
+                f'<span class="do">{escape(r.do)}</span>{cue}{watch}</span>{fig}</label>')
     return "\n".join(out)
 
 

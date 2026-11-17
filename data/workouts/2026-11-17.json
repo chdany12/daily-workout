@@ -1,0 +1,105 @@
+{
+  "name": "The Feral Gorilla Experiment",
+  "focus": "upper",
+  "minutes": 25,
+  "level": 2,
+  "format_name": "Circuit",
+  "format_rules": "CIRCUIT — 4 stations. Work 40 s, rest 20 s, move to the next. Do 5 rounds total. Every station is 1 minute, so a timer app on repeat makes this easy.",
+  "twist": "SILENT MODE: no music. Do the whole thing as quietly as possible like a ninja.",
+  "warmup": [
+    {
+      "move": "March in place",
+      "do": "45 sec",
+      "cue": "Easy march, swing your arms.",
+      "group": false,
+      "new": false
+    },
+    {
+      "move": "Leg swings",
+      "do": "10 / side",
+      "cue": "Hold the wall, swing each leg forward and back.",
+      "group": false,
+      "new": false
+    },
+    {
+      "move": "Down-dog pedal",
+      "do": "30 sec",
+      "cue": "In down-dog, alternate bending knees.",
+      "group": false,
+      "new": false
+    },
+    {
+      "move": "Slow air squats",
+      "do": "8 reps",
+      "cue": "Half-speed squats, sit deep.",
+      "group": false,
+      "new": false
+    }
+  ],
+  "main": [
+    {
+      "move": "Shadow boxing",
+      "do": "40 s work / 20 s rest",
+      "cue": "Jab-cross-hook combos, stay light on your feet.",
+      "group": false,
+      "new": true
+    },
+    {
+      "move": "Bear crawl (forward & back)",
+      "do": "40 s work / 20 s rest",
+      "cue": "Knees hover an inch off the floor, crawl a few steps each way.",
+      "group": false,
+      "new": true
+    },
+    {
+      "move": "Reverse plank hold",
+      "do": "40 s work / 20 s rest",
+      "cue": "Sit, hands behind, lift hips so body is a straight ramp.",
+      "group": false,
+      "new": true
+    },
+    {
+      "move": "High knees",
+      "do": "40 s work / 20 s rest",
+      "cue": "Run in place, knees to hip height.",
+      "group": false,
+      "new": true
+    }
+  ],
+  "cooldown": [
+    {
+      "move": "Standing hamstring stretch",
+      "do": "30 sec",
+      "cue": "Fold forward, soft knees, let your head hang.",
+      "group": false,
+      "new": false
+    },
+    {
+      "move": "Child's pose",
+      "do": "45 sec",
+      "cue": "Knees wide, sit back, arms long.",
+      "group": false,
+      "new": false
+    },
+    {
+      "move": "Cobra",
+      "do": "30 sec",
+      "cue": "Lying face down, press up gently, hips stay down.",
+      "group": false,
+      "new": false
+    },
+    {
+      "move": "Overhead triceps stretch",
+      "do": "20 sec / side",
+      "cue": "Elbow up, hand down your back, gently press elbow.",
+      "group": false,
+      "new": false
+    }
+  ],
+  "exercises": [
+    "Bear crawl (forward & back)",
+    "High knees",
+    "Reverse plank hold",
+    "Shadow boxing"
+  ]
+}

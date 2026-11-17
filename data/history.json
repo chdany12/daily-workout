@@ -27,5 +27,18 @@
       "Speed skaters (step)",
       "Squat pulses"
     ]
+  },
+  {
+    "date": "2026-11-17T15:19",
+    "name": "The Feral Gorilla Experiment",
+    "focus": "upper",
+    "minutes": 25,
+    "format": "Circuit",
+    "exercises": [
+      "Bear crawl (forward & back)",
+      "High knees",
+      "Reverse plank hold",
+      "Shadow boxing"
+    ]
   }
 ]

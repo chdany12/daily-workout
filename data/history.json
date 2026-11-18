@@ -40,5 +40,16 @@
       "Reverse plank hold",
       "Shadow boxing"
     ]
+  },
+  {
+    "date": "2026-11-18T18:22",
+    "name": "The Sneaky Cobra Gauntlet",
+    "focus": "core",
+    "minutes": 25,
+    "format": "Ladder",
+    "exercises": [
+      "Heel taps",
+      "Squat thrust"
+    ]
   }
 ]

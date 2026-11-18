@@ -1,0 +1,96 @@
+{
+  "name": "The Sneaky Cobra Gauntlet",
+  "focus": "core",
+  "minutes": 25,
+  "level": 2,
+  "format_name": "Ladder",
+  "format_rules": "LADDER UP — 20-min timer. Round 1: 1 rep of each move. Round 2: 2 reps of each. Keep adding 1 rep per round until time runs out. Write down the highest rung you hit.",
+  "twist": "SILENT MODE: no music. Do the whole thing as quietly as possible like a ninja.",
+  "warmup": [
+    {
+      "move": "Cat-cow",
+      "do": "8 reps",
+      "cue": "On all fours, round then arch your back slowly.",
+      "group": false,
+      "new": false
+    },
+    {
+      "move": "March in place",
+      "do": "45 sec",
+      "cue": "Easy march, swing your arms.",
+      "group": false,
+      "new": false
+    },
+    {
+      "move": "Leg swings",
+      "do": "10 / side",
+      "cue": "Hold the wall, swing each leg forward and back.",
+      "group": false,
+      "new": false
+    },
+    {
+      "move": "Arm circles",
+      "do": "30 sec",
+      "cue": "Big circles forward, then back.",
+      "group": false,
+      "new": false
+    }
+  ],
+  "main": [
+    {
+      "move": "Heel taps",
+      "do": "1 → 2 → 3 → … reps",
+      "cue": "Lying, shoulders lifted, reach side to side to tap your heels.",
+      "group": false,
+      "new": true
+    },
+    {
+      "move": "Squat thrust",
+      "do": "1 → 2 → 3 → … reps",
+      "cue": "Hands down, step or hop feet back to plank and back in.",
+      "group": false,
+      "new": true
+    },
+    {
+      "move": "Highest rung",
+      "do": "____",
+      "cue": "",
+      "group": false,
+      "new": false
+    }
+  ],
+  "cooldown": [
+    {
+      "move": "Standing hamstring stretch",
+      "do": "30 sec",
+      "cue": "Fold forward, soft knees, let your head hang.",
+      "group": false,
+      "new": false
+    },
+    {
+      "move": "Lying spinal twist",
+      "do": "30 sec / side",
+      "cue": "On your back, drop both knees to one side.",
+      "group": false,
+      "new": false
+    },
+    {
+      "move": "Cross-body shoulder stretch",
+      "do": "20 sec / side",
+      "cue": "Pull arm across chest.",
+      "group": false,
+      "new": false
+    },
+    {
+      "move": "Deep belly breathing",
+      "do": "60 sec",
+      "cue": "Lie down, 4 s in, 6 s out. You did it.",
+      "group": false,
+      "new": false
+    }
+  ],
+  "exercises": [
+    "Heel taps",
+    "Squat thrust"
+  ]
+}

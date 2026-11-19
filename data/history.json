@@ -51,5 +51,20 @@
       "Heel taps",
       "Squat thrust"
     ]
+  },
+  {
+    "date": "2026-11-19T18:39",
+    "name": "The Legendary Flamingo Experiment",
+    "focus": "lower",
+    "minutes": 25,
+    "format": "Supersets",
+    "exercises": [
+      "Chair sit-to-stand",
+      "Couch hip thrust",
+      "Dead bug",
+      "Donkey kicks",
+      "Fire hydrants",
+      "Glute bridge"
+    ]
   }
 ]

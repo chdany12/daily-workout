@@ -1,0 +1,142 @@
+{
+  "name": "The Legendary Flamingo Experiment",
+  "focus": "lower",
+  "minutes": 25,
+  "level": 2,
+  "format_name": "Supersets",
+  "format_rules": "SUPERSETS — do the two moves in a pair back-to-back with no rest, then rest 45 s. Repeat 3 rounds, then move to the next pair.",
+  "twist": "NO TWIST TODAY. Just vibes.",
+  "warmup": [
+    {
+      "move": "Wrist rolls",
+      "do": "20 sec",
+      "cue": "Interlace fingers, roll wrists in circles.",
+      "group": false,
+      "new": false
+    },
+    {
+      "move": "Bodyweight good morning",
+      "do": "10 reps",
+      "cue": "Gentle hinge to wake up the hamstrings.",
+      "group": false,
+      "new": false
+    },
+    {
+      "move": "World's greatest stretch",
+      "do": "4 / side",
+      "cue": "Lunge, elbow to instep, rotate arm to ceiling.",
+      "group": false,
+      "new": false
+    },
+    {
+      "move": "Slow air squats",
+      "do": "8 reps",
+      "cue": "Half-speed squats, sit deep.",
+      "group": false,
+      "new": false
+    }
+  ],
+  "main": [
+    {
+      "move": "Superset A — 3 rounds",
+      "do": "",
+      "cue": "",
+      "group": true,
+      "new": false
+    },
+    {
+      "move": "Chair sit-to-stand",
+      "do": "A1: 12 reps",
+      "cue": "Tap the chair with your butt, stand up without using hands.",
+      "group": false,
+      "new": true
+    },
+    {
+      "move": "Dead bug",
+      "do": "A2: 10 / side",
+      "cue": "On your back, lower opposite arm and leg, low back pressed down.",
+      "group": false,
+      "new": true
+    },
+    {
+      "move": "Superset B — 3 rounds",
+      "do": "",
+      "cue": "",
+      "group": true,
+      "new": false
+    },
+    {
+      "move": "Fire hydrants",
+      "do": "B1: 12 / side",
+      "cue": "On all fours, lift bent knee out to the side.",
+      "group": false,
+      "new": true
+    },
+    {
+      "move": "Donkey kicks",
+      "do": "B2: 15 / side",
+      "cue": "On all fours, kick one heel toward the ceiling, knee bent.",
+      "group": false,
+      "new": true
+    },
+    {
+      "move": "Superset C — 3 rounds",
+      "do": "",
+      "cue": "",
+      "group": true,
+      "new": false
+    },
+    {
+      "move": "Glute bridge",
+      "do": "C1: 15 reps",
+      "cue": "On your back, feet flat, squeeze glutes and lift hips.",
+      "group": false,
+      "new": true
+    },
+    {
+      "move": "Couch hip thrust",
+      "do": "C2: 15 reps",
+      "cue": "Upper back on couch edge, drive hips up, pause at top.",
+      "group": false,
+      "new": true
+    }
+  ],
+  "cooldown": [
+    {
+      "move": "Cobra",
+      "do": "30 sec",
+      "cue": "Lying face down, press up gently, hips stay down.",
+      "group": false,
+      "new": false
+    },
+    {
+      "move": "Kneeling hip flexor stretch",
+      "do": "30 sec / side",
+      "cue": "Half-kneel, tuck pelvis, lean forward slightly.",
+      "group": false,
+      "new": false
+    },
+    {
+      "move": "Figure-4 stretch",
+      "do": "30 sec / side",
+      "cue": "On your back, ankle on opposite knee, pull legs in.",
+      "group": false,
+      "new": false
+    },
+    {
+      "move": "Overhead triceps stretch",
+      "do": "20 sec / side",
+      "cue": "Elbow up, hand down your back, gently press elbow.",
+      "group": false,
+      "new": false
+    }
+  ],
+  "exercises": [
+    "Chair sit-to-stand",
+    "Couch hip thrust",
+    "Dead bug",
+    "Donkey kicks",
+    "Fire hydrants",
+    "Glute bridge"
+  ]
+}

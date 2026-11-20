@@ -66,5 +66,23 @@
       "Fire hydrants",
       "Glute bridge"
     ]
+  },
+  {
+    "date": "2026-11-20T17:59",
+    "name": "The Caffeinated Armadillo Quest",
+    "focus": "core",
+    "minutes": 25,
+    "format": "AMRAP",
+    "exercises": [
+      "Bicycle crunch",
+      "Marching high knees",
+      "Plank jacks",
+      "Plank shoulder taps",
+      "Plank to down-dog",
+      "Reverse crunch",
+      "Russian twist",
+      "Side plank",
+      "Step jacks (quiet)"
+    ]
   }
 ]

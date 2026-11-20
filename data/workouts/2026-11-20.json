@@ -1,0 +1,173 @@
+{
+  "name": "The Caffeinated Armadillo Quest",
+  "focus": "core",
+  "minutes": 25,
+  "level": 2,
+  "format_name": "AMRAP",
+  "format_rules": "AMRAP — As Many Rounds As Possible. Set a 9-min timer and loop through the list nonstop, resting only when you need to. Count your rounds. Rest 1 min between AMRAPs.",
+  "twist": "COMMENTATOR MODE: narrate yourself out loud like a sports announcer. Seriously.",
+  "warmup": [
+    {
+      "move": "Hip circles",
+      "do": "30 sec",
+      "cue": "Hands on hips, draw big circles each way.",
+      "group": false,
+      "new": false
+    },
+    {
+      "move": "Arm circles",
+      "do": "30 sec",
+      "cue": "Big circles forward, then back.",
+      "group": false,
+      "new": false
+    },
+    {
+      "move": "Shoulder rolls",
+      "do": "30 sec",
+      "cue": "Roll shoulders up, back and down.",
+      "group": false,
+      "new": false
+    },
+    {
+      "move": "Cat-cow",
+      "do": "8 reps",
+      "cue": "On all fours, round then arch your back slowly.",
+      "group": false,
+      "new": false
+    }
+  ],
+  "main": [
+    {
+      "move": "AMRAP 1 — 9 min",
+      "do": "",
+      "cue": "",
+      "group": true,
+      "new": false
+    },
+    {
+      "move": "Marching high knees",
+      "do": "32 sec",
+      "cue": "Fast march, knees high, pump the arms. Quiet.",
+      "group": false,
+      "new": true
+    },
+    {
+      "move": "Side plank",
+      "do": "16 sec / side",
+      "cue": "On forearm, hips stacked and lifted.",
+      "group": false,
+      "new": true
+    },
+    {
+      "move": "Reverse crunch",
+      "do": "10 reps",
+      "cue": "Curl knees toward chest and lift hips off the floor.",
+      "group": false,
+      "new": true
+    },
+    {
+      "move": "Russian twist",
+      "do": "16 reps",
+      "cue": "Lean back, feet up if you can, rotate side to side.",
+      "group": false,
+      "new": true
+    },
+    {
+      "move": "Rounds completed",
+      "do": "____",
+      "cue": "Write your score. Bragging rights.",
+      "group": false,
+      "new": false
+    },
+    {
+      "move": "AMRAP 2 — 9 min",
+      "do": "",
+      "cue": "",
+      "group": true,
+      "new": false
+    },
+    {
+      "move": "Plank to down-dog",
+      "do": "8 reps",
+      "cue": "From high plank push hips up and back, then return.",
+      "group": false,
+      "new": true
+    },
+    {
+      "move": "Bicycle crunch",
+      "do": "16 reps",
+      "cue": "Elbow to opposite knee, slow and controlled.",
+      "group": false,
+      "new": true
+    },
+    {
+      "move": "Plank jacks",
+      "do": "24 sec",
+      "cue": "In plank, jump feet wide and back together.",
+      "group": false,
+      "new": true
+    },
+    {
+      "move": "Plank shoulder taps",
+      "do": "16 reps",
+      "cue": "High plank, tap opposite shoulder, keep hips still.",
+      "group": false,
+      "new": true
+    },
+    {
+      "move": "Step jacks (quiet)",
+      "do": "32 sec",
+      "cue": "Step one foot out while arms go up. Alternate. No jumping.",
+      "group": false,
+      "new": true
+    },
+    {
+      "move": "Rounds completed",
+      "do": "____",
+      "cue": "Write your score. Bragging rights.",
+      "group": false,
+      "new": false
+    }
+  ],
+  "cooldown": [
+    {
+      "move": "Kneeling hip flexor stretch",
+      "do": "30 sec / side",
+      "cue": "Half-kneel, tuck pelvis, lean forward slightly.",
+      "group": false,
+      "new": false
+    },
+    {
+      "move": "Cobra",
+      "do": "30 sec",
+      "cue": "Lying face down, press up gently, hips stay down.",
+      "group": false,
+      "new": false
+    },
+    {
+      "move": "Deep belly breathing",
+      "do": "60 sec",
+      "cue": "Lie down, 4 s in, 6 s out. You did it.",
+      "group": false,
+      "new": false
+    },
+    {
+      "move": "Figure-4 stretch",
+      "do": "30 sec / side",
+      "cue": "On your back, ankle on opposite knee, pull legs in.",
+      "group": false,
+      "new": false
+    }
+  ],
+  "exercises": [
+    "Bicycle crunch",
+    "Marching high knees",
+    "Plank jacks",
+    "Plank shoulder taps",
+    "Plank to down-dog",
+    "Reverse crunch",
+    "Russian twist",
+    "Side plank",
+    "Step jacks (quiet)"
+  ]
+}

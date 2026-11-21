@@ -1,0 +1,165 @@
+{
+  "name": "The Midnight Crane Heist",
+  "focus": "upper",
+  "minutes": 25,
+  "level": 2,
+  "format_name": "Tabata",
+  "format_rules": "TABATA — 20 seconds all-out, 10 seconds rest, 8 rounds = 4 minutes. Alternate the two moves in each block. 4 block(s), 1 min rest between. Use any free interval timer app (search 'tabata timer').",
+  "twist": "SONG SWITCH: put a playlist on shuffle. Every new song = 5 squats before you continue.",
+  "warmup": [
+    {
+      "move": "Hip circles",
+      "do": "30 sec",
+      "cue": "Hands on hips, draw big circles each way.",
+      "group": false,
+      "new": false
+    },
+    {
+      "move": "Slow air squats",
+      "do": "8 reps",
+      "cue": "Half-speed squats, sit deep.",
+      "group": false,
+      "new": false
+    },
+    {
+      "move": "Cat-cow",
+      "do": "8 reps",
+      "cue": "On all fours, round then arch your back slowly.",
+      "group": false,
+      "new": false
+    },
+    {
+      "move": "March in place",
+      "do": "45 sec",
+      "cue": "Easy march, swing your arms.",
+      "group": false,
+      "new": false
+    }
+  ],
+  "main": [
+    {
+      "move": "Tabata 1 — 4 min",
+      "do": "",
+      "cue": "",
+      "group": true,
+      "new": false
+    },
+    {
+      "move": "Knee push-up",
+      "do": "20 s on / 10 s off ×4",
+      "cue": "Knees down, hips in line with shoulders. Chest to floor.",
+      "group": false,
+      "new": true
+    },
+    {
+      "move": "Chair dip",
+      "do": "20 s on / 10 s off ×4",
+      "cue": "Hands on chair edge behind you, legs straight, elbows bend to 90°.",
+      "group": false,
+      "new": false
+    },
+    {
+      "move": "Tabata 2 — 4 min",
+      "do": "",
+      "cue": "",
+      "group": true,
+      "new": false
+    },
+    {
+      "move": "Jumping jacks",
+      "do": "20 s on / 10 s off ×4",
+      "cue": "Classic. Stay light on your toes.",
+      "group": false,
+      "new": true
+    },
+    {
+      "move": "Arm circle burnout",
+      "do": "20 s on / 10 s off ×4",
+      "cue": "Arms straight out, small fast circles. Switch direction halfway.",
+      "group": false,
+      "new": true
+    },
+    {
+      "move": "Tabata 3 — 4 min",
+      "do": "",
+      "cue": "",
+      "group": true,
+      "new": false
+    },
+    {
+      "move": "Superman pull-down",
+      "do": "20 s on / 10 s off ×4",
+      "cue": "Face down, arms overhead, pull elbows down to ribs like a pull-up.",
+      "group": false,
+      "new": true
+    },
+    {
+      "move": "Pike push-up",
+      "do": "20 s on / 10 s off ×4",
+      "cue": "Hips high like an upside-down V, lower your head toward the floor.",
+      "group": false,
+      "new": true
+    },
+    {
+      "move": "Tabata 4 — 4 min",
+      "do": "",
+      "cue": "",
+      "group": true,
+      "new": false
+    },
+    {
+      "move": "Prone Y-T-W raises",
+      "do": "20 s on / 10 s off ×4",
+      "cue": "Lying face down, lift arms into a Y, then T, then W. Squeeze shoulder blades.",
+      "group": false,
+      "new": true
+    },
+    {
+      "move": "Squat to overhead reach",
+      "do": "20 s on / 10 s off ×4",
+      "cue": "Squat down, stand up fast and reach for the ceiling.",
+      "group": false,
+      "new": false
+    }
+  ],
+  "cooldown": [
+    {
+      "move": "Wall chest stretch",
+      "do": "30 sec / side",
+      "cue": "Forearm on wall, turn your body away.",
+      "group": false,
+      "new": false
+    },
+    {
+      "move": "Deep belly breathing",
+      "do": "60 sec",
+      "cue": "Lie down, 4 s in, 6 s out. You did it.",
+      "group": false,
+      "new": false
+    },
+    {
+      "move": "Overhead triceps stretch",
+      "do": "20 sec / side",
+      "cue": "Elbow up, hand down your back, gently press elbow.",
+      "group": false,
+      "new": false
+    },
+    {
+      "move": "Child's pose",
+      "do": "45 sec",
+      "cue": "Knees wide, sit back, arms long.",
+      "group": false,
+      "new": false
+    }
+  ],
+  "exercises": [
+    "Arm circle burnout",
+    "Chair dip",
+    "Jumping jacks",
+    "Knee push-up",
+    "Pike push-up",
+    "Prone Y-T-W raises",
+    "Squat to overhead reach",
+    "Superman pull-down"
+  ]
+}

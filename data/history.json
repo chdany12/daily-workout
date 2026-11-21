@@ -84,5 +84,22 @@
       "Side plank",
       "Step jacks (quiet)"
     ]
+  },
+  {
+    "date": "2026-11-21T16:56",
+    "name": "The Midnight Crane Heist",
+    "focus": "upper",
+    "minutes": 25,
+    "format": "Tabata",
+    "exercises": [
+      "Arm circle burnout",
+      "Chair dip",
+      "Jumping jacks",
+      "Knee push-up",
+      "Pike push-up",
+      "Prone Y-T-W raises",
+      "Squat to overhead reach",
+      "Superman pull-down"
+    ]
   }
 ]

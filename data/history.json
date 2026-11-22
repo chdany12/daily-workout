@@ -101,5 +101,17 @@
       "Squat to overhead reach",
       "Superman pull-down"
     ]
+  },
+  {
+    "date": "2026-11-22T17:22",
+    "name": "The Grumpy Turtle Protocol",
+    "focus": "core",
+    "minutes": 25,
+    "format": "Death By",
+    "exercises": [
+      "No-jump burpee",
+      "Seated knee tucks (chair edge)",
+      "Step jacks (quiet)"
+    ]
   }
 ]

@@ -1,0 +1,111 @@
+{
+  "name": "The Grumpy Turtle Protocol",
+  "focus": "core",
+  "minutes": 25,
+  "level": 2,
+  "format_name": "Death By",
+  "format_rules": "DEATH BY… — Minute 1: 1 rep. Minute 2: 2 reps. Minute 3: 3 reps… Alternate the two moves each minute. Rest whatever's left of each minute. When you can't finish inside the minute, you're out — write down the minute. Cap 14 min. Then do the finisher.",
+  "twist": "PLANK TAX: every time you pause mid-workout to check your phone, pay 10 seconds of plank.",
+  "warmup": [
+    {
+      "move": "Leg swings",
+      "do": "10 / side",
+      "cue": "Hold the wall, swing each leg forward and back.",
+      "group": false,
+      "new": false
+    },
+    {
+      "move": "Wrist rolls",
+      "do": "20 sec",
+      "cue": "Interlace fingers, roll wrists in circles.",
+      "group": false,
+      "new": false
+    },
+    {
+      "move": "World's greatest stretch",
+      "do": "4 / side",
+      "cue": "Lunge, elbow to instep, rotate arm to ceiling.",
+      "group": false,
+      "new": false
+    },
+    {
+      "move": "Down-dog pedal",
+      "do": "30 sec",
+      "cue": "In down-dog, alternate bending knees.",
+      "group": false,
+      "new": false
+    }
+  ],
+  "main": [
+    {
+      "move": "Seated knee tucks (chair edge)",
+      "do": "minute # = reps",
+      "cue": "Sit on edge, lean back, pull knees in and extend out.",
+      "group": false,
+      "new": true
+    },
+    {
+      "move": "No-jump burpee",
+      "do": "minute # = reps",
+      "cue": "Step back to plank, step in, stand and reach. Quiet version.",
+      "group": false,
+      "new": false
+    },
+    {
+      "move": "Minute you reached",
+      "do": "____",
+      "cue": "",
+      "group": false,
+      "new": false
+    },
+    {
+      "move": "Then finisher",
+      "do": "",
+      "cue": "",
+      "group": true,
+      "new": false
+    },
+    {
+      "move": "Step jacks (quiet)",
+      "do": "40 sec ×3 sets",
+      "cue": "Step one foot out while arms go up. Alternate. No jumping.",
+      "group": false,
+      "new": false
+    }
+  ],
+  "cooldown": [
+    {
+      "move": "Deep belly breathing",
+      "do": "60 sec",
+      "cue": "Lie down, 4 s in, 6 s out. You did it.",
+      "group": false,
+      "new": false
+    },
+    {
+      "move": "Lying spinal twist",
+      "do": "30 sec / side",
+      "cue": "On your back, drop both knees to one side.",
+      "group": false,
+      "new": false
+    },
+    {
+      "move": "Child's pose",
+      "do": "45 sec",
+      "cue": "Knees wide, sit back, arms long.",
+      "group": false,
+      "new": false
+    },
+    {
+      "move": "Wall chest stretch",
+      "do": "30 sec / side",
+      "cue": "Forearm on wall, turn your body away.",
+      "group": false,
+      "new": false
+    }
+  ],
+  "exercises": [
+    "No-jump burpee",
+    "Seated knee tucks (chair edge)",
+    "Step jacks (quiet)"
+  ]
+}

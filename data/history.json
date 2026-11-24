@@ -124,5 +124,23 @@
       "Fast feet",
       "Side plank hip dips"
     ]
+  },
+  {
+    "date": "2026-11-24T20:20",
+    "name": "The Rogue Goat Quest",
+    "focus": "lower",
+    "minutes": 25,
+    "format": "AMRAP",
+    "exercises": [
+      "Bodyweight squat",
+      "Calf raises",
+      "Curtsy lunge",
+      "Good morning",
+      "Hollow hold",
+      "Inchworm",
+      "Jump squat",
+      "Sumo squat",
+      "Tempo squat (5 s down)"
+    ]
   }
 ]

@@ -1,0 +1,173 @@
+{
+  "name": "The Rogue Goat Quest",
+  "focus": "lower",
+  "minutes": 25,
+  "level": 2,
+  "format_name": "AMRAP",
+  "format_rules": "AMRAP — As Many Rounds As Possible. Set a 9-min timer and loop through the list nonstop, resting only when you need to. Count your rounds. Rest 1 min between AMRAPs.",
+  "twist": "LEVEL UP: pick ONE move on this sheet and do the harder version of it today.",
+  "warmup": [
+    {
+      "move": "Down-dog pedal",
+      "do": "30 sec",
+      "cue": "In down-dog, alternate bending knees.",
+      "group": false,
+      "new": false
+    },
+    {
+      "move": "Bodyweight good morning",
+      "do": "10 reps",
+      "cue": "Gentle hinge to wake up the hamstrings.",
+      "group": false,
+      "new": false
+    },
+    {
+      "move": "Slow air squats",
+      "do": "8 reps",
+      "cue": "Half-speed squats, sit deep.",
+      "group": false,
+      "new": false
+    },
+    {
+      "move": "Torso twists",
+      "do": "30 sec",
+      "cue": "Feet planted, rotate side to side, let arms swing.",
+      "group": false,
+      "new": false
+    }
+  ],
+  "main": [
+    {
+      "move": "AMRAP 1 — 9 min",
+      "do": "",
+      "cue": "",
+      "group": true,
+      "new": false
+    },
+    {
+      "move": "Sumo squat",
+      "do": "12 reps",
+      "cue": "Wide stance, toes out, knees track over toes.",
+      "group": false,
+      "new": true
+    },
+    {
+      "move": "Calf raises",
+      "do": "16 reps",
+      "cue": "Rise onto toes, pause, lower slowly. Hold a wall for balance.",
+      "group": false,
+      "new": true
+    },
+    {
+      "move": "Inchworm",
+      "do": "5 reps",
+      "cue": "Fold down, walk hands out to plank, walk back, stand.",
+      "group": false,
+      "new": false
+    },
+    {
+      "move": "Good morning",
+      "do": "10 reps",
+      "cue": "Hands behind head, hinge at hips with flat back, stand tall.",
+      "group": false,
+      "new": true
+    },
+    {
+      "move": "Hollow hold",
+      "do": "16 sec",
+      "cue": "On your back, arms and legs hovering, low back glued to floor.",
+      "group": false,
+      "new": true
+    },
+    {
+      "move": "Rounds completed",
+      "do": "____",
+      "cue": "Write your score. Bragging rights.",
+      "group": false,
+      "new": false
+    },
+    {
+      "move": "AMRAP 2 — 9 min",
+      "do": "",
+      "cue": "",
+      "group": true,
+      "new": false
+    },
+    {
+      "move": "Bodyweight squat",
+      "do": "12 reps",
+      "cue": "Feet shoulder-width, sit back and down, chest up.",
+      "group": false,
+      "new": true
+    },
+    {
+      "move": "Tempo squat (5 s down)",
+      "do": "5 reps",
+      "cue": "Take a full 5 seconds to lower. Stand up normal speed.",
+      "group": false,
+      "new": true
+    },
+    {
+      "move": "Jump squat",
+      "do": "8 reps",
+      "cue": "Squat then explode up. Land soft.",
+      "group": false,
+      "new": false
+    },
+    {
+      "move": "Curtsy lunge",
+      "do": "8 / side",
+      "cue": "Step one leg diagonally behind the other, like a curtsy.",
+      "group": false,
+      "new": false
+    },
+    {
+      "move": "Rounds completed",
+      "do": "____",
+      "cue": "Write your score. Bragging rights.",
+      "group": false,
+      "new": false
+    }
+  ],
+  "cooldown": [
+    {
+      "move": "Standing quad stretch",
+      "do": "20 sec / side",
+      "cue": "Hold the wall, pull heel to glute.",
+      "group": false,
+      "new": false
+    },
+    {
+      "move": "Standing hamstring stretch",
+      "do": "30 sec",
+      "cue": "Fold forward, soft knees, let your head hang.",
+      "group": false,
+      "new": false
+    },
+    {
+      "move": "Kneeling hip flexor stretch",
+      "do": "30 sec / side",
+      "cue": "Half-kneel, tuck pelvis, lean forward slightly.",
+      "group": false,
+      "new": false
+    },
+    {
+      "move": "Wall chest stretch",
+      "do": "30 sec / side",
+      "cue": "Forearm on wall, turn your body away.",
+      "group": false,
+      "new": false
+    }
+  ],
+  "exercises": [
+    "Bodyweight squat",
+    "Calf raises",
+    "Curtsy lunge",
+    "Good morning",
+    "Hollow hold",
+    "Inchworm",
+    "Jump squat",
+    "Sumo squat",
+    "Tempo squat (5 s down)"
+  ]
+}

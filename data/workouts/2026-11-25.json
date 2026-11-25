@@ -1,0 +1,142 @@
+{
+  "name": "The Silent Lobster Protocol",
+  "focus": "upper",
+  "minutes": 25,
+  "level": 2,
+  "format_name": "Supersets",
+  "format_rules": "SUPERSETS — do the two moves in a pair back-to-back with no rest, then rest 45 s. Repeat 3 rounds, then move to the next pair.",
+  "twist": "SILENT MODE: no music. Do the whole thing as quietly as possible like a ninja.",
+  "warmup": [
+    {
+      "move": "Bodyweight good morning",
+      "do": "10 reps",
+      "cue": "Gentle hinge to wake up the hamstrings.",
+      "group": false,
+      "new": false
+    },
+    {
+      "move": "Hip circles",
+      "do": "30 sec",
+      "cue": "Hands on hips, draw big circles each way.",
+      "group": false,
+      "new": false
+    },
+    {
+      "move": "Cat-cow",
+      "do": "8 reps",
+      "cue": "On all fours, round then arch your back slowly.",
+      "group": false,
+      "new": false
+    },
+    {
+      "move": "Arm circles",
+      "do": "30 sec",
+      "cue": "Big circles forward, then back.",
+      "group": false,
+      "new": false
+    }
+  ],
+  "main": [
+    {
+      "move": "Superset A — 3 rounds",
+      "do": "",
+      "cue": "",
+      "group": true,
+      "new": false
+    },
+    {
+      "move": "Chair dip",
+      "do": "A1: 10 reps",
+      "cue": "Hands on chair edge behind you, legs straight, elbows bend to 90°.",
+      "group": false,
+      "new": false
+    },
+    {
+      "move": "Bear crawl (forward & back)",
+      "do": "A2: 30 sec",
+      "cue": "Knees hover an inch off the floor, crawl a few steps each way.",
+      "group": false,
+      "new": false
+    },
+    {
+      "move": "Superset B — 3 rounds",
+      "do": "",
+      "cue": "",
+      "group": true,
+      "new": false
+    },
+    {
+      "move": "Crab walk",
+      "do": "B1: 30 sec",
+      "cue": "Hands behind, hips up, walk forward and back.",
+      "group": false,
+      "new": true
+    },
+    {
+      "move": "Inchworm",
+      "do": "B2: 6 reps",
+      "cue": "Fold down, walk hands out to plank, walk back, stand.",
+      "group": false,
+      "new": false
+    },
+    {
+      "move": "Superset C — 3 rounds",
+      "do": "",
+      "cue": "",
+      "group": true,
+      "new": false
+    },
+    {
+      "move": "Shadow boxing",
+      "do": "C1: 40 sec",
+      "cue": "Jab-cross-hook combos, stay light on your feet.",
+      "group": false,
+      "new": false
+    },
+    {
+      "move": "Wide push-up",
+      "do": "C2: 10 reps",
+      "cue": "Hands wider than shoulders, elbows out at ~45°.",
+      "group": false,
+      "new": true
+    }
+  ],
+  "cooldown": [
+    {
+      "move": "Wall chest stretch",
+      "do": "30 sec / side",
+      "cue": "Forearm on wall, turn your body away.",
+      "group": false,
+      "new": false
+    },
+    {
+      "move": "Cross-body shoulder stretch",
+      "do": "20 sec / side",
+      "cue": "Pull arm across chest.",
+      "group": false,
+      "new": false
+    },
+    {
+      "move": "Overhead triceps stretch",
+      "do": "20 sec / side",
+      "cue": "Elbow up, hand down your back, gently press elbow.",
+      "group": false,
+      "new": false
+    },
+    {
+      "move": "Lying spinal twist",
+      "do": "30 sec / side",
+      "cue": "On your back, drop both knees to one side.",
+      "group": false,
+      "new": false
+    }
+  ],
+  "exercises": [
+    "Bear crawl (forward & back)",
+    "Chair dip",
+    "Crab walk",
+    "Inchworm",
+    "Shadow boxing",
+    "Wide push-up"
+  ]
+}

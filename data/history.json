@@ -142,5 +142,20 @@
       "Sumo squat",
       "Tempo squat (5 s down)"
     ]
+  },
+  {
+    "date": "2026-11-25T19:34",
+    "name": "The Silent Lobster Protocol",
+    "focus": "upper",
+    "minutes": 25,
+    "format": "Supersets",
+    "exercises": [
+      "Bear crawl (forward & back)",
+      "Chair dip",
+      "Crab walk",
+      "Inchworm",
+      "Shadow boxing",
+      "Wide push-up"
+    ]
   }
 ]

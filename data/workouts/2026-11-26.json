@@ -1,0 +1,97 @@
+{
+  "name": "The Caffeinated Goat Protocol",
+  "focus": "lower",
+  "minutes": 25,
+  "level": 2,
+  "format_name": "Pyramid",
+  "format_rules": "PYRAMID — 7 rounds. Each round, do every move for that round's number (climb up, then back down). Rest ~30 s between rounds. Cap 20 min — stop wherever you are.",
+  "twist": "CLOCK DIGIT: look at the clock. The last digit of the minute = bonus reps added to your FIRST move every round.",
+  "warmup": [
+    {
+      "move": "Leg swings",
+      "do": "10 / side",
+      "cue": "Hold the wall, swing each leg forward and back.",
+      "group": false,
+      "new": false
+    },
+    {
+      "move": "Wrist rolls",
+      "do": "20 sec",
+      "cue": "Interlace fingers, roll wrists in circles.",
+      "group": false,
+      "new": false
+    },
+    {
+      "move": "Shoulder rolls",
+      "do": "30 sec",
+      "cue": "Roll shoulders up, back and down.",
+      "group": false,
+      "new": false
+    },
+    {
+      "move": "Slow air squats",
+      "do": "8 reps",
+      "cue": "Half-speed squats, sit deep.",
+      "group": false,
+      "new": false
+    }
+  ],
+  "main": [
+    {
+      "move": "Calf raises",
+      "do": "5-10-15-20-15-10-5",
+      "cue": "Rise onto toes, pause, lower slowly. Hold a wall for balance.",
+      "group": false,
+      "new": false
+    },
+    {
+      "move": "Reverse lunge",
+      "do": "2-4-6-8-6-4-2 / side",
+      "cue": "Step back, both knees bend to 90°, push through front heel.",
+      "group": false,
+      "new": true
+    },
+    {
+      "move": "Chair step-up",
+      "do": "2-4-6-8-6-4-2 / side",
+      "cue": "Sturdy chair only. Drive through the top foot, control the way down.",
+      "group": false,
+      "new": true
+    }
+  ],
+  "cooldown": [
+    {
+      "move": "Figure-4 stretch",
+      "do": "30 sec / side",
+      "cue": "On your back, ankle on opposite knee, pull legs in.",
+      "group": false,
+      "new": false
+    },
+    {
+      "move": "Child's pose",
+      "do": "45 sec",
+      "cue": "Knees wide, sit back, arms long.",
+      "group": false,
+      "new": false
+    },
+    {
+      "move": "Cobra",
+      "do": "30 sec",
+      "cue": "Lying face down, press up gently, hips stay down.",
+      "group": false,
+      "new": false
+    },
+    {
+      "move": "Lying spinal twist",
+      "do": "30 sec / side",
+      "cue": "On your back, drop both knees to one side.",
+      "group": false,
+      "new": false
+    }
+  ],
+  "exercises": [
+    "Calf raises",
+    "Chair step-up",
+    "Reverse lunge"
+  ]
+}

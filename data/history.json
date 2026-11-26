@@ -157,5 +157,17 @@
       "Shadow boxing",
       "Wide push-up"
     ]
+  },
+  {
+    "date": "2026-11-26T19:15",
+    "name": "The Caffeinated Goat Protocol",
+    "focus": "lower",
+    "minutes": 25,
+    "format": "Pyramid",
+    "exercises": [
+      "Calf raises",
+      "Chair step-up",
+      "Reverse lunge"
+    ]
   }
 ]

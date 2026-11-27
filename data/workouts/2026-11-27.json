@@ -1,0 +1,165 @@
+{
+  "name": "The Tiny Raccoon Experiment",
+  "focus": "full",
+  "minutes": 25,
+  "level": 2,
+  "format_name": "Tabata",
+  "format_rules": "TABATA — 20 seconds all-out, 10 seconds rest, 8 rounds = 4 minutes. Alternate the two moves in each block. 4 block(s), 1 min rest between. Use any free interval timer app (search 'tabata timer').",
+  "twist": "TEMPO MODE: take 3 full seconds to lower on every rep.",
+  "warmup": [
+    {
+      "move": "March in place",
+      "do": "45 sec",
+      "cue": "Easy march, swing your arms.",
+      "group": false,
+      "new": false
+    },
+    {
+      "move": "World's greatest stretch",
+      "do": "4 / side",
+      "cue": "Lunge, elbow to instep, rotate arm to ceiling.",
+      "group": false,
+      "new": false
+    },
+    {
+      "move": "Bodyweight good morning",
+      "do": "10 reps",
+      "cue": "Gentle hinge to wake up the hamstrings.",
+      "group": false,
+      "new": false
+    },
+    {
+      "move": "Hip circles",
+      "do": "30 sec",
+      "cue": "Hands on hips, draw big circles each way.",
+      "group": false,
+      "new": false
+    }
+  ],
+  "main": [
+    {
+      "move": "Tabata 1 — 4 min",
+      "do": "",
+      "cue": "",
+      "group": true,
+      "new": false
+    },
+    {
+      "move": "Single-leg glute bridge",
+      "do": "20 s on / 10 s off ×4",
+      "cue": "One foot planted, other leg straight up. Lift hips.",
+      "group": false,
+      "new": true
+    },
+    {
+      "move": "Squat to overhead reach",
+      "do": "20 s on / 10 s off ×4",
+      "cue": "Squat down, stand up fast and reach for the ceiling.",
+      "group": false,
+      "new": false
+    },
+    {
+      "move": "Tabata 2 — 4 min",
+      "do": "",
+      "cue": "",
+      "group": true,
+      "new": false
+    },
+    {
+      "move": "Dead bug",
+      "do": "20 s on / 10 s off ×4",
+      "cue": "On your back, lower opposite arm and leg, low back pressed down.",
+      "group": false,
+      "new": false
+    },
+    {
+      "move": "Plank up-downs",
+      "do": "20 s on / 10 s off ×4",
+      "cue": "Forearm plank to high plank and back, one arm at a time.",
+      "group": false,
+      "new": true
+    },
+    {
+      "move": "Tabata 3 — 4 min",
+      "do": "",
+      "cue": "",
+      "group": true,
+      "new": false
+    },
+    {
+      "move": "Heel taps",
+      "do": "20 s on / 10 s off ×4",
+      "cue": "Lying, shoulders lifted, reach side to side to tap your heels.",
+      "group": false,
+      "new": false
+    },
+    {
+      "move": "High knees",
+      "do": "20 s on / 10 s off ×4",
+      "cue": "Run in place, knees to hip height.",
+      "group": false,
+      "new": false
+    },
+    {
+      "move": "Tabata 4 — 4 min",
+      "do": "",
+      "cue": "",
+      "group": true,
+      "new": false
+    },
+    {
+      "move": "Pike push-up",
+      "do": "20 s on / 10 s off ×4",
+      "cue": "Hips high like an upside-down V, lower your head toward the floor.",
+      "group": false,
+      "new": false
+    },
+    {
+      "move": "Split squat",
+      "do": "20 s on / 10 s off ×4",
+      "cue": "Staggered stance, drop the back knee straight down.",
+      "group": false,
+      "new": true
+    }
+  ],
+  "cooldown": [
+    {
+      "move": "Wall chest stretch",
+      "do": "30 sec / side",
+      "cue": "Forearm on wall, turn your body away.",
+      "group": false,
+      "new": false
+    },
+    {
+      "move": "Lying spinal twist",
+      "do": "30 sec / side",
+      "cue": "On your back, drop both knees to one side.",
+      "group": false,
+      "new": false
+    },
+    {
+      "move": "Child's pose",
+      "do": "45 sec",
+      "cue": "Knees wide, sit back, arms long.",
+      "group": false,
+      "new": false
+    },
+    {
+      "move": "Figure-4 stretch",
+      "do": "30 sec / side",
+      "cue": "On your back, ankle on opposite knee, pull legs in.",
+      "group": false,
+      "new": false
+    }
+  ],
+  "exercises": [
+    "Dead bug",
+    "Heel taps",
+    "High knees",
+    "Pike push-up",
+    "Plank up-downs",
+    "Single-leg glute bridge",
+    "Split squat",
+    "Squat to overhead reach"
+  ]
+}

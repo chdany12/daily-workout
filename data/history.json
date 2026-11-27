@@ -169,5 +169,22 @@
       "Chair step-up",
       "Reverse lunge"
     ]
+  },
+  {
+    "date": "2026-11-27T19:09",
+    "name": "The Tiny Raccoon Experiment",
+    "focus": "full",
+    "minutes": 25,
+    "format": "Tabata",
+    "exercises": [
+      "Dead bug",
+      "Heel taps",
+      "High knees",
+      "Pike push-up",
+      "Plank up-downs",
+      "Single-leg glute bridge",
+      "Split squat",
+      "Squat to overhead reach"
+    ]
   }
 ]
